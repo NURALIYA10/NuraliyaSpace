@@ -1,0 +1,148 @@
+<html>
+    <head>
+        <title>Nuraliya's Personal Space</title>
+    </head>
+    <link rel="stylesheet" href="style1.css">
+    <!-- icon social media-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+
+        /* Keyframes for Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-15px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+
+       .popup1 {
+            display: flex;
+            justify-content: center;
+            padding: 50px 20px;
+            gap: 30px;
+       }
+       .popup2 {
+            background: wheat;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            width: 30%;
+            max-width: 300px;
+            box-shadow: 10px 20px palevioletred;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+       }
+       .popup2:hover {
+        transform: translateY(-10px);
+        box-shadow: 20px 40px rgb(85, 83, 83);
+       }
+       .popup2 h2 {
+        margin-bottom: 10px;
+        font-size: 1.8rem;
+        color: rgb(54, 48, 39);
+       }
+       .popup2 p {
+        margin-bottom: 20px;
+        font-size: 1rem;
+        color: gray;
+       }
+       .popup2 a {
+        text-decoration: none;
+        color: #ff09ad;
+        font-weight: bolder;
+        font-size: 1rem;
+       }
+    </style>
+    <body>
+        <!--Social Media-->
+        <div class="social-media">
+            <a href="https://www.prod.instagram.com/" target="_blank" title="Instagram">
+                <i class="fa-brands fa-instagram fa-spin"></i>
+            </a>
+            <a href="https://www.tiktok.com/@strawberry.shortkek?_t=8scpNonHd3Z&_r=1" target="_blank" title="Tiktok">
+                <i class="fa-brands fa-tiktok fa-spin"></i>
+            </a>
+            <a href="https://youtube.com/@liyamalek9825?si=hQiPiiIAI9jqha_v" target="_blank" title="Youtube">
+                <i class="fa-brands fa-youtube fa-spin"></i>
+            </a>
+            <a href="mailto:liyamalek@gmail.com" target="_blank" title="Email">
+                <i class="fa-brands fa-google fa-spin"></i>
+            </a>
+        </div>
+
+        <header class="header">
+            <h1>WELCOME TO 
+            <h1 class="name">NURALIYAH'S</h1>
+            <h1>PERSONAL SPACE</h1>
+        </header>
+
+        <!-- Popup Section -->
+    <section class="popup1">
+        <div class="popup2">
+            <h2>Biodata</h2>
+            <p>Learn more about who I am.</p>
+            <a href="websitebiodata.html">Read More</a>
+        </div>
+        <div class="popup2">
+            <h2>Experience</h2>
+            <p>Discover my professional journey.</p>
+            <a href="websiteexperience.html">View Details</a>
+        </div>
+        <div class="popup2">
+            <h2>Gallery</h2>
+            <p>See moments captured in time.</p>
+            <a href="websitegallery.html">Explore Gallery</a>
+        </div>
+        <div class="popup2">
+            <h2>Contact Me</h2>
+            <p>Get  close and keep in touch with me.</p>
+            <a href="websitegallery.html">Send Me</a>
+        </div>
+    </section>
+    </body>
+    <footer>
+        <div class="clock" id="clock">Loading Time...</div>
+    
+        <p>&copy; <span id="current-year"></span> NuraliyaSpace. All rights reserved.</p>
+        <p>Last updated: <span id="last-updated"></span></p>
+      </footer>
+
+      <!-- JavaScript for clock, dynamic year, and notifications -->
+  <script>
+    // Dynamic year and last updated date
+    const currentYear = new Date().getFullYear();
+    document.getElementById('current-year').textContent = currentYear;
+    const lastUpdated = new Date().toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+    document.getElementById('last-updated').textContent = lastUpdated;
+
+    // Real-time clock
+    function updateClock() {
+      const now = new Date();
+      const hours = now.getHours().toString().padStart(2, '0');
+      const minutes = now.getMinutes().toString().padStart(2, '0');
+      const seconds = now.getSeconds().toString().padStart(2, '0');
+      const timeString = `${hours}:${minutes}:${seconds}`;
+      document.getElementById('clock').textContent = timeString;
+    }
+    setInterval(updateClock, 1000); // Update clock every second
+  </script>
+</html>

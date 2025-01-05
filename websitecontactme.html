@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f2f7;
+        }
+
+        /* Contact Form Styling */
+        .contact-form-container {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 900px;
+            margin: 30px auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .form-section {
+            width: 50%;
+        }
+
+        h2 {
+            color: #ff6b81;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            color: #ff6b81;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ff6b81;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #ff3366;
+            outline: none;
+        }
+
+        button {
+            background-color: #ff6b81;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #ff3366;
+        }
+
+        .image-section img {
+            width: 90%;
+            max-width: 400px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #ffe6e6;
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin: 5px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .clock {
+            font-weight: bold;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .contact-form-container {
+                flex-direction: column;
+            }
+
+            .form-section, .image-section {
+                width: 100%;
+                text-align: center;
+            }
+
+            .form-section {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Social Media Links -->
+    <div class="social-media">
+        <a href="https://www.instagram.com/" target="_blank" title="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://www.tiktok.com/" target="_blank" title="Tiktok">
+            <i class="fa-brands fa-tiktok"></i>
+        </a>
+        <a href="https://youtube.com/" target="_blank" title="YouTube">
+            <i class="fa-brands fa-youtube"></i>
+        </a>
+        <a href="mailto:example@gmail.com" target="_blank" title="Email">
+            <i class="fa-brands fa-google"></i>
+        </a>
+    </div>
+
+    <!-- Header Section -->
+    <header class="header">
+        <h1>Send Me a Message</h1>
+        <p>If you're not familiar with social media, use the note space below to send me a message.</p>
+        <p>Thank you!</p>
+        <nav>
+            <a href="websitehomepage.html">Home</a>
+            <a href="websitebiodata.html">Biodata</a>
+            <a href="websiteexperience.html">Experience</a>
+            <a href="websitegallery.html">Gallery</a>
+        </nav>
+    </header>
+
+    <!-- Contact Form -->
+    <div class="contact-form-container">
+        <!-- Form Section -->
+        <div class="form-section">
+            <h2>Contact Me</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" placeholder="Enter your message" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+            <div id="notification" class="notification"></div>
+        </div>
+
+        <!-- Image Section -->
+        <div class="image-section">
+            <img src="myself 2.jpg" alt="Contact Me">
+        </div>
+    </div>
+
+    <a href="#top" class="button">Back to top</a>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="clock" id="clock">Loading time...</div>
+        <p>&copy; <span id="current-year"></span> NuraliyaSpace. All rights reserved.</p>
+        <p>Last updated: <span id="last-updated"></span></p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Message sent successfully!');
+        });
+
+        // Dynamic Footer Info
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        document.getElementById('last-updated').textContent = new Date().toLocaleDateString();
+
+        // Real-Time Clock
+        setInterval(() => {
+            const now = new Date();
+            document.getElementById('clock').textContent = now.toLocaleTimeString();
+        }, 1000);
+    </script>
+</body>
+</html>
